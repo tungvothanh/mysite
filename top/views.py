@@ -5,4 +5,4 @@ def index(request):
     return HttpResponse("Hello, world. You're at the polls index.")
 
 def top(request):
-    return HttpResponse("Hello, wor????????ld. You're at the polls index.")
+    return render(request, 'top/top.html')
