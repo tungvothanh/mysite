@@ -16,7 +16,14 @@ Released   : 20090327
 <title>Simple Passage by Free CSS Templates</title>
 <meta name="keywords" content="" />
 <meta name="Simple Passage" content="" />
-<link href="default.css" rel="stylesheet" type="text/css" media="screen" />
+
+
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'top/style.css' %}" />
+
+
+
+
 </head>
 <body>
 <!-- start header -->
