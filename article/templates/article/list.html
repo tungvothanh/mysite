@@ -1,0 +1,14 @@
+<div>
+  Hello, Here is page for add new article, hope is working well
+{#<form action="{% url 'accounts:update_store' %}" method="POST">#}
+
+{% if lists %}
+    {% for list in lists %}
+{#        <p>{% list %}</p>#}
+        <p>{{  list.title }} </p>
+        <p>{{  list.content }} </p>
+        <p>{{  list.create_time }} </p>
+        <p>{{  list.update_time }} </p>
+    {% endfor %}
+{% endif %}
+</div>

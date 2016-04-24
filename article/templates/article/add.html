@@ -1,0 +1,13 @@
+<div>
+  Hello, Here is page for add new article, hope is working well
+{#<form action="{% url 'accounts:update_store' %}" method="POST">#}
+  <form action="{% url 'article:add' %}" method="post">
+      {% csrf_token %}
+      Title:<br>
+      <input type="text" name="title"><br>
+      Content:<br>
+      <input type="text" name="content"><br>
+      <input type="submit" value="submit">
+
+</form>
+</div>

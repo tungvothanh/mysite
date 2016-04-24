@@ -18,6 +18,7 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^top/', include('top.urls')),
+    url(r'^article/', include('article.urls', namespace='article')),
     url(r'^admin/', admin.site.urls),
     url(r'^$', 'top.views.top', name='root'),
 ]
