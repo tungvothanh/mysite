@@ -1,14 +1,27 @@
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'top/css/style.css' %}" />
 <div>
   Hello, Here is page for add new article, hope is working well
 {#<form action="{% url 'accounts:update_store' %}" method="POST">#}
 
-{% if lists %}
-    {% for list in lists %}
-{#        <p>{% list %}</p>#}
-        <p>{{  list.title }} </p>
-        <p>{{  list.content }} </p>
-        <p>{{  list.create_time }} </p>
-        <p>{{  list.update_time }} </p>
+</div>
+<div class="content">
+    <div class="content_resize">
+      <div class="mainbar">
+        <div class="article">
+
+          <h2><span>New Ariticle</span></h2>
+            {% if lists %}
+                {% for list in lists %}
+                <div name="body">
+                    <p>{{  list.title }} </p>
+                    <p>{{  list.content }} </p>
+                    <p>{{  list.create_time }} </p>
+                    <p>{{  list.update_time }} </p>
+                </div>
     {% endfor %}
 {% endif %}
+          </div>
+        </div>
+    </div>
 </div>
