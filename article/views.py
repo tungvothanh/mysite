@@ -9,7 +9,7 @@ def index(request):
 
     db = client.blog
 
-    print db.collection_names()
+    # print db.collection_names()
     print("did you com herere??????????????")
     return HttpResponse("Hello, world. You're at the polls index.")
 
@@ -19,7 +19,7 @@ def top(request):
 
     db = client.blog
 
-    print db.collection_names()
+    # print db.collection_names()
     print("did you com herere??????????????")
 
     return render(request, 'top/top.html')
@@ -48,7 +48,7 @@ def list(request):
 
     lists = Posts.objects.all()
 
-    print(lists)
+    # print(lists)
 
     return render(request,'article/list.html',{'lists':lists})
 
@@ -58,4 +58,3 @@ def test_mongo():
 
     db = client.blog
 
-    print db.collection_names()
