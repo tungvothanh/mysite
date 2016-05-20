@@ -27,7 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 # Application definition
 
 INSTALLED_APPS = [
@@ -38,6 +39,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'top',
+    'article',
+    'account',
+    'upload',
+#     dau co phai muon them cai gi thi them ????
+# cu hoc thoi so gi co chua
+# hoc con tot hon choi chan
+# minh ko phan duoc lvel do thi cung gan levle do chu???
+
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -116,11 +125,16 @@ USE_L10N = True
 USE_TZ = True
 
 # STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
+# STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 # STATIC_URL = '/static/'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
-STATIC_ROOT = "/home/vothanhtung/mysite/static"
+# STATIC_ROOT = "/home/vothanhtung/mysite/static"
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+    '/var/www/static/',
+]
