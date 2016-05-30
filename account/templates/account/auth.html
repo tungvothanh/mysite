@@ -1,0 +1,51 @@
+<head>
+<title>Log in</title>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<style>
+body{
+	font-family:Arial,Helvetica,sans-serif;
+	font-size: 12px;
+}
+</style>
+</head>
+<body>
+    {% if state %}
+	{{ state }}
+{#for change password#}
+    <div>
+    <form action="{% url 'account:change_password'%}" method="post">
+        {% csrf_token %}
+		{% if next %}
+		<input type="hidden" name="next" value="{{ next }}" />
+		{% endif %}
+		current password:
+		<input type="password" name="current_password" value="" /><br />
+		new password:
+		<input type="password" name="new_password1" value="" /><br />
+        new password again:
+        <input type="password" name="new_password2" value="" /><br />
+
+		<input type="submit" value="Change Password" />
+	</form>
+
+    </div>
+    {% else %}
+	<form action="{% url 'account:simple_login'%}" method="post">
+        {% csrf_token %}
+		{% if next %}
+		<input type="hidden" name="next" value="{{ next }}" />
+		{% endif %}
+		username:
+		<input type="text" name="username" value="{{ username}}" /><br />
+		password:
+		<input type="password" name="password" value="" /><br />
+
+		<input type="submit" value="Log In" />
+	</form>
+     {% endif %}
+
+    <div>Here is a logout
+        <a href=" {% url 'account:logout' %}">logout</a>
+    </div>
+</body>
+</html>
